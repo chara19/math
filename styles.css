@@ -280,6 +280,64 @@ a { color: inherit; }
   text-transform: uppercase;
   line-height: 1.4;
   white-space: nowrap;
+  position: relative;
+}
+
+/* =========================================================
+   Clickable glossary terms (inline text + tag variants)
+   ========================================================= */
+.term {
+  position: relative;
+  display: inline;
+  cursor: help;
+  border-bottom: 1px dotted var(--color-accent);
+  outline: none;
+}
+.term:focus,
+.term:hover { border-bottom-color: var(--color-accent-hover); }
+
+.tag-term { cursor: help; outline: none; }
+.tag-term::after {
+  content: "?";
+  margin-inline-start: 0.25rem;
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+.term-explain {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: start;
+  white-space: normal;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 2.5rem));
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+.term:focus > .term-explain,
+.term:hover > .term-explain,
+.tag-term:focus > .term-explain,
+.tag-term:hover > .term-explain {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .tag-featured {
   background: var(--color-accent);
