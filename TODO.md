@@ -4,11 +4,9 @@ Work through this list before going live. Most items are find-and-replace in `in
 
 ---
 
-## 1. Personal info (find-and-replace)
+## 1. Personal info
 
-| Find | Replace with | Notes |
-|---|---|---|
-| `[TODO: nom]` | Your last name (Bazgour?) | Appears in `<title>` and in the footer. The portrait `alt` text already uses "Khalil Bazgour". |
+All resolved — `Khalil Bazgour` is in the footer, the portrait alt, and the page title now reads `Khalil math`.
 
 ## 2. Visible `[TODO: …]` markers in copy
 
