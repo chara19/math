@@ -134,8 +134,10 @@ a { color: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 15%; /* bias up so the face sits higher in the circle */
+  object-position: 50% 25%; /* bias up so the face sits higher in the circle */
   display: block;
+  transform: scale(1.3); /* zoom in toward the face */
+  transform-origin: center 25%;
 }
 .portrait-placeholder {
   width: 100%;
