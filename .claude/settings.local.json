@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Rename-Item -Path \"portrait.jpg.jpeg\" -NewName \"portrait.jpg\")",
+      "Bash(gh auth *)",
+      "PowerShell($out = Join-Path $env:TEMP 'gh_auth_out.txt'; $err = Join-Path $env:TEMP 'gh_auth_err.txt'; Remove-Item -Path $out,$err -ErrorAction SilentlyContinue; $proc = Start-Process -FilePath 'C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe' -ArgumentList 'auth','login','--hostname','github.com','--git-protocol','https','--web' -RedirectStandardOutput $out -RedirectStandardError $err -NoNewWindow -PassThru; Start-Sleep -Seconds 5; $proc.Id | Out-File \"$env:TEMP\\\\gh_auth_pid.txt\"; Write-Output \\(\"PID=\" + $proc.Id\\); Write-Output '--- stdout ---'; if \\(Test-Path $out\\) { Get-Content $out } else { Write-Output '\\(empty\\)' }; Write-Output '--- stderr ---'; if \\(Test-Path $err\\) { Get-Content $err } else { Write-Output '\\(empty\\)' })"
+    ]
+  }
+}
